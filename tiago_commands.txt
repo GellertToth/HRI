@@ -1,0 +1,17 @@
+rocker --x11 --nvidia --name my-tiago-dev \
+--volume ~/Documents/UNI/HRI/tiago_public_ws:/home/tiago_public_ws \
+--env PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+--volume ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+--volume ~/.config/pulse/cookie:/root/.config/pulse/cookie \
+--device /dev/snd \
+--privileged \
+--persist-image \
+my-tiago-image
+
+Do everything here: http://wiki.ros.org/Robots/TIAGo/Tutorials/Installation/InstallUbuntuAndROS
+
+source /opt/ros/noetic/setup.bash
+catkin build -DCATKIN_ENABLE_TESTING=0 -j $(expr `nproc` / 2)
+source ./devel/setup.bash
+
+roslaunch tiago_gazebo tiago_gazebo.launch public_sim:=true end_effector:=pal-gripper
