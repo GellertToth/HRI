@@ -1,0 +1,45 @@
+<launch>
+  <!-- Custom supermarket world -->
+  <arg name="world_file" default="$(find my_supermarket)/worlds/supermarket.world" />
+  <arg name="public_sim" default="true"/>
+
+  <!-- Start Gazebo with your supermarket world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_file)" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+  </include>
+
+  <!-- Spawn TIAGo robot into the world -->
+  <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch">
+  <arg name="arm" value="true" />
+  <arg name="end_effector" value="pal-hey5" />
+  <arg name="ft_sensor" value="schunk-ft" />
+  <arg name="laser_model" value="sick-571" />
+  <arg name="camera_model" value="orbbec-astra" />
+  <arg name="gzpose" value="-x 0 -y 0 -z 0.0" />
+  <arg name="base_type" value="pmb2" />
+  <arg name="slow_control_period" value="false" />
+  <arg name="has_screen" value="false" />
+</include>
+
+
+  <!-- Bring up the TIAGo robot system -->
+  <include file="$(find tiago_gazebo)/launch/simulation_tiago_bringup.launch">
+    <arg name="arm" value="true"/>
+    <arg name="end_effector" value="pal-hey5"/>
+    <arg name="ft_sensor" value="schunk-ft"/>
+    <arg name="laser_model" value="sick-571"/>
+    <arg name="camera_model" value="orbbec-astra"/>
+    <arg name="public_sim" value="$(arg public_sim)"/>
+    <arg name="use_moveit_camera" value="false"/>
+    <arg name="use_dynamic_footprint" value="false"/>
+    <arg name="base_type" value="pmb2"/>
+    <arg name="advanced_grasping" value="false"/>
+  </include>
+
+  <group>
+    <node name="tuck_arm" pkg="my_supermarket" type="tuck_arm.py" output="screen"/>
+  </group>
+
+</launch>

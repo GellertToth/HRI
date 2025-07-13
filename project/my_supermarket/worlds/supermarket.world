@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="supermarket_world">
+
+    <!-- Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Left-side Aisles -->
+    <model name="aisle_left_1">
+      <static>true</static>
+      <link name="link">
+        <pose>-5.0 -3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_left_2">
+      <static>true</static>
+      <link name="link">
+        <pose>-2.5 -3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_left_3">
+      <static>true</static>
+      <link name="link">
+        <pose>0 -3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_left_4">
+      <static>true</static>
+      <link name="link">
+        <pose>2.5 -3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_right_1">
+      <static>true</static>
+      <link name="link">
+        <pose>-5.0 3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_right_2">
+      <static>true</static>
+      <link name="link">
+        <pose>-2.5 3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_right_3">
+      <static>true</static>
+      <link name="link">
+        <pose>0 3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="aisle_right_4">
+      <static>true</static>
+      <link name="link">
+        <pose>2.5 3.5 0.75 0 0 0</pose>
+        <collision name="collision">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 5.0 1.5</size></box></geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

@@ -1,0 +1,63 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix shop: <http://example.org/shop#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+shop:apple_juice a shop:Product ;
+    shop:containsAlcohol false ;
+    shop:locatedIn shop:Aisle1 .
+
+shop:beer a shop:Product ;
+    shop:containsAlcohol true ;
+    shop:locatedIn shop:Aisle3 .
+
+shop:bread a shop:Product ;
+    shop:containsAlcohol false ;
+    shop:hasAllergen shop:gluten ;
+    shop:locatedIn shop:Aisle1 .
+
+shop:containsAlcohol a rdf:Property .
+
+shop:hasAllergen a rdf:Property .
+
+shop:isAllergicTo a rdf:Property .
+
+shop:locatedIn a rdf:Property .
+
+shop:peanuts a shop:Product ;
+    shop:containsAlcohol false ;
+    shop:locatedIn shop:Aisle2 .
+
+shop:peanuts_allergen a shop:Allergen .
+
+shop:user0 a shop:User ;
+    shop:isAllergicTo shop:gluten .
+
+shop:user3 a shop:User ;
+    shop:isAllergicTo shop:gluten .
+
+shop:user4 a shop:User ;
+    shop:isAllergicTo shop:gluten .
+
+shop:user_1 a shop:User ;
+    shop:isAllergicTo shop:gluten .
+
+shop:wine a shop:Product ;
+    shop:containsAlcohol true ;
+    shop:locatedIn shop:Aisle3 .
+
+shop:Aisle2 a shop:Location .
+
+shop:Aisle1 a shop:Location .
+
+shop:Aisle3 a shop:Location .
+
+shop:Allergen a rdf:Class .
+
+shop:Location a rdf:Class .
+
+shop:User a rdf:Class .
+
+shop:Product a rdf:Class .
+
+shop:gluten a shop:Allergen .
+
