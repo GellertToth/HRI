@@ -47,7 +47,6 @@ class ShopOntologyManager:
             self.create_user(user_name)
         user_uri = self.SHOP[user_name]
         allergen_uri = self.SHOP[allergen_name]
-        # Add allergy triple
         self.graph.add((user_uri, self.SHOP.isAllergicTo, allergen_uri))
         print(f"Added allergy '{allergen_name}' to user '{user_name}'.")
         self.save()
@@ -309,8 +308,7 @@ class ShopAssistant:
 
         rospy.sleep(1.5)
 
-        # Replace with your OpenAI API key
-        self.openai_api_key = "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"
+        self.openai_api_key = "PLACE OPEN AI KEY HERE"
         self.model = "gpt-4"
         self.state = InitialState(parent=self, first_start=True)
 
