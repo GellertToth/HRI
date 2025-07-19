@@ -14,7 +14,7 @@ class WhisperSpeechToTextNode:
     def __init__(self):
         rospy.init_node('whisper_speech_to_text_node')
         self.listen_duration = rospy.get_param('~listen_duration', 3.0)
-        self.samplerate = 16000  # Whisper expects 16 kHz
+        self.samplerate = 16000 
         self.channels = 1
 
         self.transcription_pub = rospy.Publisher('/speech_transcription', String, queue_size=10)
@@ -62,7 +62,7 @@ class WhisperSpeechToTextNode:
     def save_audio_to_wav(self, audio_data, filename):
         with wave.open(filename, 'wb') as wf:
             wf.setnchannels(self.channels)
-            wf.setsampwidth(2)  # 'int16' = 2 bytes
+            wf.setsampwidth(2)
             wf.setframerate(self.samplerate)
             wf.writeframes(audio_data.tobytes())
 

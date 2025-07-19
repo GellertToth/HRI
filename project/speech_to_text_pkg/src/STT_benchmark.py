@@ -14,20 +14,19 @@ class STTBenchmarkNode:
     def __init__(self):
         self.STT = WhisperSpeechToTextNode()
 
-        # Sentences for the user to read
         self.sentences = [
             "Where can I find the organic bananas?",
             "Do you have any gluten free pasta?",
-            # "I'm looking for almond milk, can you help?",
-            # "What aisle is the rice in?",
-            # "Are there any discounts on chicken today?",
-            # "Can you tell me the ingredients in this soup?",
-            # "Is this cereal suitable for vegans?",
-            # "Do you sell lactose free yogurt?",
-            # "I need help finding the baby formula.",
-            # "How much does this bottle of olive oil cost?",
-            # "Are the strawberries on sale this week?",
-            # "Can you show me where the cleaning supplies are?",
+            "I'm looking for almond milk, can you help?",
+            "What aisle is the rice in?",
+            "Are there any discounts on chicken today?",
+            "Can you tell me the ingredients in this soup?",
+            "Is this cereal suitable for vegans?",
+            "Do you sell lactose free yogurt?",
+            "I need help finding the baby formula.",
+            "How much does this bottle of olive oil cost?",
+            "Are the strawberries on sale this week?",
+            "Can you show me where the cleaning supplies are?",
         ]
 
         self.run_benchmark()

@@ -52,9 +52,8 @@ class DeepFaceNode:
 
         best_score = float("inf")
         best_id = None
-        threshold = 0.3  # adjust for sensitivity
+        threshold = 0.3 
 
-        # Compare to each saved customer
         for file in os.listdir(self.known_dir):
             if not file.endswith(".jpg"):
                 continue
@@ -89,7 +88,6 @@ class DeepFaceNode:
             self.age_pub.publish(-1)
             return
 
-        # Save the frame to a temporary file (DeepFace prefers paths, not raw arrays)
         temp_path = "/tmp/temp_frame.jpg"
         cv2.imwrite(temp_path, self.image)
 
